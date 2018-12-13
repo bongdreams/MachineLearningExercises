@@ -26,5 +26,3 @@ p_disease_negative
 
 p_disease_positive <- disease_positive / (healthy_positive + disease_positive)
 p_disease_positive
-
-
