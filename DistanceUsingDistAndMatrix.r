@@ -18,4 +18,4 @@ d_mat[39,73]
 
 d_mat[73, 74]
 
-image(as.matrix(d))
+image(as.matrix(d)) 
