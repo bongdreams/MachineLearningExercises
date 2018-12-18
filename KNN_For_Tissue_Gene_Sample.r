@@ -20,7 +20,7 @@ F_1 <- function(k){
   
   y_hat <- predict(knn_fit, test_set, type = "class")
   
-  mean(y_hat == test_set_y)
+  mean(y_hat == test_set_y) 
 }
 
 sapply(ks, F_1)
