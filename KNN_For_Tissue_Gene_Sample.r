@@ -5,7 +5,7 @@ data("tissue_gene_expression")
 x <- tissue_gene_expression$x
 y <- tissue_gene_expression$y
 
-ks <- c(1, 3, 5, 7, 9, 11)
+ks <- c(1:100, 1)
 
 F_1 <- function(k){
   set.seed(1)
