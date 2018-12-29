@@ -15,4 +15,4 @@ y_hat <- predict(fittest, type = "class")
 
 confusionMatrix(data = as.factor(y_hat), reference = as.factor(tissue_gene_expression$y))
 
-rpart.plot(fittest)
+#rpart.plot(fittest)
