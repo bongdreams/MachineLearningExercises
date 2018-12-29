@@ -11,4 +11,4 @@ set.seed(1991)
 fit_rf <- train(x, y, method="rf", tuneGrid=data.frame(mtry=seq(50,200,25)), nodesize=1) 
 fit_rf$bestTune
 
-varImp(train(x, y, method="rf", tuneGrid=data.frame(mtry=seq(50,200,25)), nodesize=1))
+varImp(fit_rf)
