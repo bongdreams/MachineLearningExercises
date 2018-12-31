@@ -17,3 +17,4 @@ q_star <- data.frame(output)
 mean(q_star$output)
 
 sd(q_star$output)
+
