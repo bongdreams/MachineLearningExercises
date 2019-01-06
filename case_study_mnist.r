@@ -62,29 +62,3 @@ cm <- confusionMatrix(y_hat_knn, factor(y_test))
 cm$overall["Accuracy"]
 
 
-#Implementing the RandomForest using 5-Fold Cross Validation (Rborist)
-
-library(Rborist)
-control <- trainControl(method = "cv", number=5, p=0.8)
-grid <- expand.grid(minNode=c(1, 5), predFixed=c(10, 15, 25, 35, 50))
-
-train_rf <- train(x[, col_index], 
-                  y,
-                  method = "rf",
-                  nTree = 50, 
-                  trControl = control, 
-                  tuneGrid = grid, 
-                  nSamp = 5000)
-
-ggplot(train_rf)
-
-train_rf$bestTune
-
-fit_rf <- Rborist(x[,col_index], y, 
-                  nTree = 1000, 
-                  minNode = train_rf$bestTune$minNode, 
-                  predFixed = train_rf$bestTune$predFixed)
-
-y_hat_rf <- factor(levels(y)[predict(fit_rf, x_test[, col_index])$yPred])
-cm <- confusionMatrix(y_hat_rf, y_test)
-cm$overall["Accuracy"]
